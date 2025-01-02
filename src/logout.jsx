@@ -6,32 +6,14 @@ function Logout() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Show a confirmation dialog
-    toast.warn('Are you sure you want to log out?', {
-      position: 'top-center',
-      autoClose: false, // Keep open until user confirms
-      closeOnClick: false,
-      draggable: false,
-      hideProgressBar: true,
-      buttons: [
-        {
-          label: 'Yes, Logout',
-          onClick: () => {
-            // Remove the token from localStorage
-            localStorage.removeItem('token');
-            toast.success('Logged out successfully!');
-            // Redirect to the home page
-            navigate('/');
-          },
-        },
-        {
-          label: 'Cancel',
-          onClick: () => {
-            toast.dismiss();
-          },
-        },
-      ],
-    });
+    // Show a confirmation dialog using the browser's built-in confirm dialog
+    const confirmLogout = window.confirm('Are you sure you want to log out?');
+    if (confirmLogout) {
+      // Remove token from local storage
+      localStorage.removeItem('token');
+      toast.success('Logged out successfully!');
+      navigate('/'); // Redirect to the home page
+    }
   };
 
   return (
@@ -87,3 +69,4 @@ function Logout() {
 }
 
 export default Logout;
+

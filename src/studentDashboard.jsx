@@ -49,7 +49,7 @@ const StudentDashboard = () => {
       
       
      
-      <div className="bg-[#CDEB93] w-5/6 p-16 ml-1/6 flex justify-between ml-[16.67%]">
+      <div className="bg-[#CDEB93] w-5/6 p-16 ml-1/6 flex justify-between ">
         <div className="w-3/5">
           <div className="flex flex-col space-y-4">
             <input

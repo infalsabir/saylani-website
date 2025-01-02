@@ -34,7 +34,7 @@ const Settings = () => {
                   Settings
                 </Link>
                 <Link
-                  to="/create-course"
+                  to="/logout"
                   className="hover:text-blue-700 bg-white text-lime-600 text-center block py-2 rounded-lg"
                 >
                   Logout
